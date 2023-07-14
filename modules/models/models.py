@@ -142,6 +142,15 @@ class OpenAIClient(BaseLLMModel):
             "frequency_penalty": self.frequency_penalty,
         }
 
+        if self.model_name == "Claude-instant":
+            self.model_name = "a2"
+        elif self.model_name == "Sage":
+            self.model_name = "capybara"
+        elif self.model_name == "Claude-instant-100k":
+            self.model_name = "a2_100k"
+        elif self.model_name == "Claude+":
+            self.model_name = "a2_2"
+
         if self.max_generation_token is not None:
             payload["max_tokens"] = self.max_generation_token
         if self.stop_sequence is not None:

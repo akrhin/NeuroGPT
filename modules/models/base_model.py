@@ -136,6 +136,8 @@ class ModelType(Enum):
         model_name_lower = model_name.lower()
         if "gpt" in model_name_lower:
             model_type = ModelType.OpenAI
+        elif "claude" in model_name_lower:
+            model_type = ModelType.OpenAI
         elif "chatglm" in model_name_lower:
             model_type = ModelType.ChatGLM
         elif "llama" in model_name_lower or "alpaca" in model_name_lower:
@@ -370,11 +372,11 @@ class BaseLLMModel:
         stream=False,
         use_websearch=False,
         files=None,
-        reply_language="中文",
+        reply_language="Русский",
         should_check_token_count=True,
     ):  # repetition_penalty, top_k
 
-        status_text = "开始生成回答……"
+        status_text = "Начинаю генерацию ответа ..."
         logging.info(
              "用户" + f"{self.user_identifier}" + "的输入为：" + colorama.Fore.BLUE + f"{inputs}" + colorama.Style.RESET_ALL
         )
