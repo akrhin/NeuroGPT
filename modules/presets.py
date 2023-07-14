@@ -53,6 +53,7 @@ ONLINE_MODELS = [
     "gpt-3.5-turbo-0613",
     "gpt-4",
     "gpt-4-0613",
+    "gpt-4-32k"
 ]
 
 LOCAL_MODELS = [
